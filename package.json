@@ -1,25 +1,26 @@
 {
 	"name": "react-threejs",
 	"version": "1.0.0",
-  "private": true,
+	"private": true,
 	"description": "Demo",
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test --env=jsdom",
-    "lint": "eslint ./src/",
-    "format": "prettier -w ./src/"
+		"lint": "eslint ./src/",
+		"format": "prettier -w ./src/"
 	},
 	"author": "Dennis Kristiansen <denniskristiansen@protonmail.com>",
 	"dependencies": {
 		"@react-three/fiber": "^7.0.24",
+		"@react-three/drei": "^8.6.1",
+		"@types/three": "^0.136.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-scripts": "^5.0.0",
 		"three": "^0.136.0"
 	},
 	"devDependencies": {
-		"@types/three": "^0.136.1",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-react": "^7.28.0",
@@ -43,9 +44,9 @@
 				"jsx": true
 			}
 		},
-    "plugins": [
-      "react"
-    ],
+		"plugins": [
+			"react"
+		],
 		"extends": [
 			"eslint:recommended",
 			"plugin:react/recommended",
@@ -54,7 +55,7 @@
 		],
 		"rules": {
 			"no-unused-vars": "warn",
-      "react/prop-types": "off"
+			"react/prop-types": "off"
 		}
 	},
 	"browserslist": {

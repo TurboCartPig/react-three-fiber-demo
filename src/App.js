@@ -1,6 +1,6 @@
 import React, { useRef, useState, useReducer } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
-import OrbitControls from "./OrbitControls"
+import { OrbitControls } from "@react-three/drei"
 import "./styles.css"
 
 function Model(props) {
