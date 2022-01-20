@@ -1,0 +1,72 @@
+{
+	"name": "react-threejs",
+	"version": "1.0.0",
+  "private": true,
+	"description": "Demo",
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test --env=jsdom",
+    "lint": "eslint ./src/",
+    "format": "prettier -w ./src/"
+	},
+	"author": "Dennis Kristiansen <denniskristiansen@protonmail.com>",
+	"dependencies": {
+		"@react-three/fiber": "^7.0.24",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-scripts": "^5.0.0",
+		"three": "^0.136.0"
+	},
+	"devDependencies": {
+		"@types/three": "^0.136.1",
+		"eslint": "^7.32.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"prettier": "^2.3.2"
+	},
+	"prettier": {
+		"trailingComma": "es5",
+		"useTabs": true,
+		"tabWidth": 4,
+		"semi": false
+	},
+	"eslintConfig": {
+		"env": {
+			"browser": true
+		},
+		"parserOptions": {
+			"ecmaVersion": "latest",
+			"sourceType": "module",
+			"ecmaFeatures": {
+				"jsx": true
+			}
+		},
+    "plugins": [
+      "react"
+    ],
+		"extends": [
+			"eslint:recommended",
+			"plugin:react/recommended",
+			"plugin:react-hooks/recommended",
+			"prettier"
+		],
+		"rules": {
+			"no-unused-vars": "warn",
+      "react/prop-types": "off"
+		}
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
+}
