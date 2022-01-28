@@ -45,7 +45,7 @@ function Viewport({ items, select }) {
 	)
 }
 
-function Inspector({ selected }) {
+export function Inspector({ selected }) {
 	return (
 		<aside>
 			<h1>Properties</h1>
@@ -74,7 +74,6 @@ const initialState = {
 }
 
 function reducer(state, action) {
-	console.log(action)
 	switch (action.type) {
 		case "select":
 			return { selected: action.value }

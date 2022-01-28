@@ -12,8 +12,10 @@
 	},
 	"author": "Dennis Kristiansen <denniskristiansen@protonmail.com>",
 	"dependencies": {
-		"@react-three/fiber": "^7.0.24",
 		"@react-three/drei": "^8.6.1",
+		"@react-three/fiber": "^7.0.24",
+		"@types/react": "^17.0.38",
+		"@types/react-dom": "^17.0.11",
 		"@types/three": "^0.136.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
@@ -23,6 +25,7 @@
 	"devDependencies": {
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-jest": "^26.0.0",
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
 		"prettier": "^2.3.2"
@@ -45,7 +48,8 @@
 			}
 		},
 		"plugins": [
-			"react"
+			"react",
+			"jest"
 		],
 		"extends": [
 			"eslint:recommended",
@@ -56,7 +60,28 @@
 		"rules": {
 			"no-unused-vars": "warn",
 			"react/prop-types": "off"
-		}
+		},
+		"overrides": [
+			{
+				"files": [
+					"**/__tests__/*.js",
+					"**/__tests__/*.jsx",
+					"**/*.test.js",
+					"**/*.test.jsx",
+					"**/*.spec.js",
+					"**/*.spec.jsx"
+				],
+				"env": {
+					"jest": true
+				},
+				"extends": [
+					"plugin:jest/recommended"
+				],
+				"rules": {
+					"jest/expect-expect": "off"
+				}
+			}
+		]
 	},
 	"browserslist": {
 		"production": [
