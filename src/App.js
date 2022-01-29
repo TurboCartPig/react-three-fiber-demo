@@ -1,6 +1,7 @@
-import React, { useRef, useState, useReducer } from "react"
+import React, { Suspense, useReducer, useRef, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
+import { OrbitControls, useGLTF, useProgress } from "@react-three/drei"
+import damagedHelmet from "./DamagedHelmet.gltf"
 import "./styles.css"
 
 function Model(props) {
@@ -26,22 +27,43 @@ function Model(props) {
 	)
 }
 
+function Scene(props) {
+	const model = useGLTF(damagedHelmet)
+
+	return <primitive position={[2.0, 0.0, 0.0]} object={model.scene} />
+}
+
+function Loading() {
+	const { progress } = useProgress()
+
+	return (
+		<div style={{ width: "100%" }} className="viewport">
+			<h1>Loading...</h1>
+			<p style={{ textAlign: "center" }}>Progress: {progress}%</p>
+		</div>
+	)
+}
+
 function Viewport({ items, select }) {
 	return (
-		<Canvas className="viewport">
-			<OrbitControls />
-			<ambientLight intensity={0.1} />
-			<pointLight position={[10, 10, 10]} />
+		<Suspense fallback={<Loading />}>
+			<Canvas className="viewport">
+				<OrbitControls />
+				<ambientLight intensity={0.1} />
+				<pointLight position={[10, 10, 10]} />
 
-			{/* Render all the items as models */}
-			{items.map((item, index) => (
-				<Model
-					key={index}
-					position={item.position}
-					onClick={() => select(index)}
-				/>
-			))}
-		</Canvas>
+				<Scene />
+
+				{/* Render all the items as models */}
+				{items.map((item, index) => (
+					<Model
+						key={index}
+						position={item.position}
+						onClick={() => select(index)}
+					/>
+				))}
+			</Canvas>
+		</Suspense>
 	)
 }
 
