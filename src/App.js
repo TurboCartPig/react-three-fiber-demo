@@ -87,7 +87,12 @@ const items = [
 	},
 	{
 		position: [0.0, 1.0, 0.0],
-		properties: ["Seriousness", "Novelty", "Buzzwordiness"],
+		properties: [
+			"Seriousness",
+			"Novelty",
+			"Buzzwordiness",
+			"Improvebility",
+		],
 	},
 ]
 
