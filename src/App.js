@@ -10,7 +10,7 @@ function Model(props) {
 
 	const [hovered, setHovered] = useState(false)
 
-	useFrame((state, delta) => {
+	useFrame((_, delta) => {
 		meshRef.current.rotation.x += delta * 2.0
 	})
 
@@ -27,7 +27,7 @@ function Model(props) {
 	)
 }
 
-function Scene(props) {
+function Scene() {
 	const model = useGLTF(damagedHelmet)
 
 	return <primitive position={[2.0, 0.0, 0.0]} object={model.scene} />
