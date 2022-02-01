@@ -49,6 +49,14 @@
 				"jsx": true
 			}
 		},
+		"settings": {
+			"react": {
+				"version": "detect"
+			},
+			"jest": {
+				"version": "detect"
+			}
+		},
 		"plugins": [
 			"react",
 			"jest"
