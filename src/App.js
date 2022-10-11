@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unknown-property */
+
 import React, { Suspense, useReducer, useRef, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { OrbitControls, useGLTF, useProgress } from "@react-three/drei"
